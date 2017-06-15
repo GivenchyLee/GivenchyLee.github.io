@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="我的第一个自制博客 分享web中的点点滴滴">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="GivenchyLee">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="Scss学习记录1"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="我的第一个自制博客 分享web中的点点滴滴" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="lastdance"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>Scss学习记录1 - lastdance</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<!-- Nav -->
+		<header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="lastdance" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archives
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags">
+                
+                  Tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+<!--     </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div> -->
+</header>
+
+		<!-- Main Content -->
+		<div class="content-area">
+	<div class="post">
+		<div class="container">
+			<article>
+				<!-- 头 -->
+				<div class="post-header">
+					<h1 class="post-title">
+						Scss学习记录1
+						
+					</h1>
+					<p class="posted-on">
+					2017-05-01
+					</p>
+					<div class="tags-links">
+						
+							
+							<a href="/tags/Sass/">
+								Sass
+							</a>
+							
+							<a href="/tags/Syntactically/">
+								Syntactically
+							</a>
+							
+							<a href="/tags/Awesome/">
+								Awesome
+							</a>
+							
+							<a href="/tags/StyleSheets/">
+								StyleSheets
+							</a>
+							
+							<a href="/tags/Nest/">
+								Nest
+							</a>
+							
+							<a href="/tags/Rules/">
+								Rules
+							</a>
+							
+						
+					</div>
+				</div>
+				<!-- 摘要 -->
+				<div class="toc">
+					
+				</div>
+				<!-- 内容 -->
+				<div class="post-content">
+					<h1 id="Sass-Syntactically-Awesome-StyleSheets"><a href="#Sass-Syntactically-Awesome-StyleSheets" class="headerlink" title="Sass (Syntactically Awesome StyleSheets)"></a>Sass (Syntactically Awesome StyleSheets)</h1><p>sass 是对CSS的扩展，让CSS语言更加强大。它允许你使用变量、嵌套规则、mixins、import等众多功能，并且完全兼容CSS语法。</p>
+<h2 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h2><ul>
+<li>完全兼容CSS3</li>
+<li>在CSS语言基础上添加了扩展功能</li>
+<li>函数库控制指令之类的高级功能</li>
+<li>良好的格式、可对输出格式进行定制</li>
+<li>支持Firebug</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>Sass 有两种语法，第一种被称之为SCSS(Sassy CSS),是一个CSS3语法的扩充版本,本文讲的语法也是这一种语法知识，这种语法的样式表文件需要以.scss扩展名<br><a id="more"></a><br>第二种是比较老的语法称之为缩排语法(或者就称之为Sass)，使用这种语法的样式表文件需要以.sass作为扩展名<br>任何一种语法都可以导入另一种语法撰写的而文件，只需要使用sass-convert命令行工具，就可以将一种语法转换成另一种语法：</p>
+<blockquote>
+<p>将Sass转换成Scss<br>sass-convert style.sass style.scss<br>将scss转换成sass<br>sass-convert style.scss style.sass</p>
+</blockquote>
+<h3 id="嵌套规则-Nest-Rules"><a href="#嵌套规则-Nest-Rules" class="headerlink" title="嵌套规则(Nest Rules)"></a>嵌套规则(Nest Rules)</h3><p>sass允许CSS规则内嵌在另外一个里面。这种内嵌在里面的内部规则只适用于外部规则的选择器。例如<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#main p&#123;</div><div class="line">    color: #00ff00;</div><div class="line">    width:100%;</div><div class="line"></div><div class="line">    .redbox &#123;</div><div class="line">        background-color:#ff0000;</div><div class="line">        color:#000;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译为：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> <span class="selector-tag">p</span>&#123;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#00ff00</span>;</div><div class="line">    <span class="attribute">width</span>:<span class="number">100%</span>;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#main</span> <span class="selector-tag">p</span><span class="selector-class">.redbox</span> &#123;</div><div class="line">    <span class="attribute">background-color</span>:<span class="number">#ff0000</span>;</div><div class="line">    <span class="attribute">color</span>:<span class="number">#000000</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>这样子可以避免父选择器的重复，使复杂的CSS样式变成含有多个简单的内部选择器</p>
+<h4 id="引用父选择器：-amp"><a href="#引用父选择器：-amp" class="headerlink" title="引用父选择器：&amp;"></a>引用父选择器：<strong>&amp;</strong></h4><p>有时候对于一个内部选择器想使用父类的选择器规则的时候，这个语法就非常的有用。例如当选择器被hover的时候你想要一个special style，又或者当body element有一个特定的class类名的时候。在以上这几种情形下，你可以显示的指定父选择器可以插在那个地方<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line">a &#123;</div><div class="line">    font-weight:bold; /*bold ==700*/</div><div class="line">    text-decoration:none;</div><div class="line">    &amp;:hover &#123;</div><div class="line">        text-decoration:underline;</div><div class="line">    &#125;</div><div class="line">    body.firefox &amp; &#123;</div><div class="line">        font-weight:normal; //normal == 400</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译为<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div><div class="line">10</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">a</span> &#123;</div><div class="line">   <span class="attribute">font-weight</span>:bold; <span class="comment">/*bold ==700*/</span></div><div class="line">   <span class="attribute">text-decoration</span>:none; </div><div class="line">&#125;</div><div class="line"><span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">text-decoration</span>:underline;</div><div class="line">&#125;</div><div class="line"><span class="selector-tag">body</span><span class="selector-class">.firefox</span> <span class="selector-tag">a</span>&#123;</div><div class="line">    <span class="attribute">font-weight</span>:normal; <span class="comment">/*normal ==400 */</span></div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p><code>&amp;</code>在编译时将被替换成父类选择符，输出到CSS中。也就是说，如果你有一个深层嵌套的规则，父选择符也会在<code>&amp;</code>被替换之前完整的解析,例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line">#main &#123;</div><div class="line">    color:black;</div><div class="line">    a &#123;</div><div class="line">        font-weight:bold;</div><div class="line">        &amp;:hover &#123;</div><div class="line">            color:red;</div><div class="line">        &#125;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div><div class="line">9</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">color</span>:black;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#main</span> <span class="selector-tag">a</span>&#123;</div><div class="line">    <span class="attribute">font-weight</span>:bold;</div><div class="line">&#125;</div><div class="line"><span class="selector-id">#main</span> <span class="selector-tag">a</span><span class="selector-pseudo">:hover</span> &#123;</div><div class="line">    <span class="attribute">color</span>:red;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h4 id="嵌套属性"><a href="#嵌套属性" class="headerlink" title="嵌套属性"></a>嵌套属性</h4><p>CSS在命名空间有好多属性，例如font-family,font-size,font-weight全部属于font这个命名空间中。在CSS中你想设置同一个命名空间中的一系列属性，你必须每一次都要把命名空间加上，为了只写一次命名空间，该空间先的属性内嵌在命名空间中。sass提供了如下的简写：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.funky &#123;</div><div class="line">    font: &#123;</div><div class="line">        family:fantasy;</div><div class="line">        size:30em;</div><div class="line">        weight:bold;</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.funky</span> &#123;</div><div class="line">    <span class="attribute">font-family</span>:fantasy;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">30em</span>;</div><div class="line">    <span class="attribute">font-weight</span>:bold;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>同时属性的命名空间还可以同时拥有自己的一个值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">.funky &#123;</div><div class="line">    font:2px/3px &#123;</div><div class="line">        family:fantasy;</div><div class="line">        size:30em;</div><div class="line">        weight:bold</div><div class="line">    &#125;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line"><span class="selector-class">.funky</span> &#123;</div><div class="line">    <span class="attribute">font</span>:<span class="number">2px</span>/<span class="number">3px</span>; <span class="comment">/*font-size/heightline*/</span></div><div class="line">    <span class="attribute">font-family</span>:fantasy;</div><div class="line">    <span class="attribute">font-size</span>:<span class="number">30em</span>;</div><div class="line">    <span class="attribute">font-weight</span>: bold;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="注释"><a href="#注释" class="headerlink" title="注释"></a>注释</h3><p>sass的注释有两种，一种是多行或单行也可以用的<code>/**/</code><br>另外一种就是单行注释 <code>//</code></p>
+
+				</div>
+				<!-- 版权 -->
+				<div class="post-copyright">
+					<p class="copyright-item">
+	<span>Author: </span>
+	<span>GivenchyLee</span>
+</p>
+<p class="copyright-item">
+	<span>Origin: </span>
+	<a href="http://yoursite.com">http://yoursite.com</a>
+</p>
+<p class="copyright-item">
+	<span>Link: </span>
+	<a href=":year/:month/:day/:title/">:year/:month/:day/:title/</a>
+</p>
+
+<p class="copyright-item license">
+	本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+</p>
+
+				</div>
+				<!-- 分页 -->
+				<div class="post-footer">
+					<!-- 文章详情的分页部分 -->
+	<nav class="post-nav">
+		
+				<a href="/2017/05/01/scss学习记录2/" class="prev">
+				<i class="iconfont icon-left"></i>
+				<sapn class="prev-text">scss学习记录2</sapn>
+				</a>
+		
+		
+				<a href="/2017/04/29/Sublime中常用MarkDown插件/" class="next">
+				<span class="next-text">MarkDownPlunginsForSublime</span>
+				<i class="iconfont icon-right"></i>
+				</a>
+			
+	</nav>
+					
+				</div>
+			</article>
+			<div class="comments">
+				<!-- 评论 -->
+				
+	
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		/*
+		var disqus_config = function () {
+		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://givenchylee.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+		
+		<!-- 注脚 -->
+		<footer class="footer">
+			
+	<div class="social-links">
+		
+			
+				<a href="mailto:your@email.com" class="iconfont icon-email" title = "email"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-stack-overflow" title = "stack-overflow"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-google" title = "google"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-github" title = "github"></a>
+			
+		
+	</div>
+
+<div class="copyright">
+	<span class="power-by">
+		Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+	</span>
+	<span class="theme-info">
+		Theme -
+		<a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Dance</a>
+	</span>
+	<span class="copyright-year">
+		
+		&copy;
+		
+		2017
+		<span class="heart">
+			<i class="iconfont icon-heart"></i>
+		</span>
+		<span class="author">
+			GivenchyLee
+		</span>
+	</span>
+</div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="我的第一个自制博客 分享web中的点点滴滴">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="GivenchyLee">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="lastdance"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="我的第一个自制博客 分享web中的点点滴滴" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="lastdance"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="website" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>lastdance - 分享代码与创意</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<!-- Nav -->
+		<header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="lastdance" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archives
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags">
+                
+                  Tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+<!--     </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div> -->
+</header>
+
+		<!-- Main Content -->
+		<div class="site-content home">
+	<main class="content-area">
+		
+			<div class="even">
+				<div class="container">
+	<article class="post">
+
+		<!-- 标题 -->
+		<h1 class="entry-title">
+			<a href="/2017/05/01/scss学习记录2/" rel ="bookmark">
+				scss学习记录2
+			</a>
+		</h1>
+
+		<!-- 摘录 -->
+		
+			<div class="entry-content">
+				<p>
+					<h1 id="SassScript"><a href="#SassScript" class="headerlink" title="SassScript"></a>SassScript</h1><p>除了普通的CSS语法外，sass支持了一小部分扩展，称之为SassScript。SassScript与允许属性使用变量、计算、还有函数。SassScript可以被用在任何属性的值、当你在写 <strong>mixin</strong> 的时候SassScript还可以被用来生成选择器和属性名字。</p>
+<h2 id="Variable："><a href="#Variable：" class="headerlink" title="Variable：$"></a>Variable：<strong>$</strong></h2><p>SassScript最直接的用法是使用变量。定义一个变量开始于一个美元符号$，写法类似CSS属性：<br><code>$width: 5em;</code> 接下来你可以给属性赋值的时候引用他们<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#main &#123;</div><div class="line">    width:$width;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>变量仅仅在定义他们的嵌套选择器里面是可用的，如果他们被定义在了任何一个嵌套选择器的外面，那么他么可以在任何地方使用。<br><em>注意：曾经的变量定义是以！开始的，虽然现在还是可以用的，但是！已经过时了，它会产生警告，所以我们建议使用美元符号$</em><br><em>注意：变量定义的时候也是可以用=的，这样子也是可以工作的，但是会产生警告，所以我们还是建议使用：来替代=</em><br>
+				</p>
+			</div>
+		
+
+		<!-- 时间 -->
+		<p class="posted-on">
+			2017-05-01
+		</p>
+
+		<!-- 标签链接 -->
+		<div class="tags-links">
+		
+			
+			<a href="/tags/SCss/">
+				SCss
+			</a>
+			
+			<a href="/tags/SassScript/">
+				SassScript
+			</a>
+			
+			<a href="/tags/Variable/">
+				Variable
+			</a>
+			
+			<a href="/tags/Arial/">
+				Arial
+			</a>
+			
+			<a href="/tags/Firefox/">
+				Firefox
+			</a>
+			
+			<a href="/tags/Helvetica/">
+				Helvetica
+			</a>
+			
+		
+		</div>
+	</article>
+</div>
+			</div>
+		
+			<div class="even">
+				<div class="container">
+	<article class="post">
+
+		<!-- 标题 -->
+		<h1 class="entry-title">
+			<a href="/2017/05/01/scss学习记录1/" rel ="bookmark">
+				Scss学习记录1
+			</a>
+		</h1>
+
+		<!-- 摘录 -->
+		
+			<div class="entry-content">
+				<p>
+					<h1 id="Sass-Syntactically-Awesome-StyleSheets"><a href="#Sass-Syntactically-Awesome-StyleSheets" class="headerlink" title="Sass (Syntactically Awesome StyleSheets)"></a>Sass (Syntactically Awesome StyleSheets)</h1><p>sass 是对CSS的扩展，让CSS语言更加强大。它允许你使用变量、嵌套规则、mixins、import等众多功能，并且完全兼容CSS语法。</p>
+<h2 id="特色"><a href="#特色" class="headerlink" title="特色"></a>特色</h2><ul>
+<li>完全兼容CSS3</li>
+<li>在CSS语言基础上添加了扩展功能</li>
+<li>函数库控制指令之类的高级功能</li>
+<li>良好的格式、可对输出格式进行定制</li>
+<li>支持Firebug</li>
+</ul>
+<h2 id="语法"><a href="#语法" class="headerlink" title="语法"></a>语法</h2><p>Sass 有两种语法，第一种被称之为SCSS(Sassy CSS),是一个CSS3语法的扩充版本,本文讲的语法也是这一种语法知识，这种语法的样式表文件需要以.scss扩展名<br>
+				</p>
+			</div>
+		
+
+		<!-- 时间 -->
+		<p class="posted-on">
+			2017-05-01
+		</p>
+
+		<!-- 标签链接 -->
+		<div class="tags-links">
+		
+			
+			<a href="/tags/Sass/">
+				Sass
+			</a>
+			
+			<a href="/tags/Syntactically/">
+				Syntactically
+			</a>
+			
+			<a href="/tags/Awesome/">
+				Awesome
+			</a>
+			
+			<a href="/tags/StyleSheets/">
+				StyleSheets
+			</a>
+			
+			<a href="/tags/Nest/">
+				Nest
+			</a>
+			
+			<a href="/tags/Rules/">
+				Rules
+			</a>
+			
+		
+		</div>
+	</article>
+</div>
+			</div>
+		
+			<div class="even">
+				<div class="container">
+	<article class="post">
+
+		<!-- 标题 -->
+		<h1 class="entry-title">
+			<a href="/2017/04/29/Sublime中常用MarkDown插件/" rel ="bookmark">
+				MarkDownPlunginsForSublime
+			</a>
+		</h1>
+
+		<!-- 摘录 -->
+		
+			<div class="entry-content">
+				<p>
+					<h2 id="MarkDown插件"><a href="#MarkDown插件" class="headerlink" title="MarkDown插件"></a>MarkDown插件</h2><h3 id="OmniMarkupPreview-实时在浏览器中预览，而MarkdownPreview是需要手动生成的和F5预览，如果有双屏的话，这个插件应该是个很不错的体验"><a href="#OmniMarkupPreview-实时在浏览器中预览，而MarkdownPreview是需要手动生成的和F5预览，如果有双屏的话，这个插件应该是个很不错的体验" class="headerlink" title="OmniMarkupPreview:实时在浏览器中预览，而MarkdownPreview是需要手动生成的和F5预览，如果有双屏的话，这个插件应该是个很不错的体验"></a>OmniMarkupPreview:实时在浏览器中预览，而MarkdownPreview是需要手动生成的和F5预览，如果有双屏的话，这个插件应该是个很不错的体验</h3><h5 id="快捷键如下："><a href="#快捷键如下：" class="headerlink" title="快捷键如下："></a>快捷键如下：</h5><ul>
+<li>Ctrl+Alt+O: Preview Markup in Browser</li>
+<li>Ctrl+Alt+X: Export Markup as HTML.</li>
+<li>Ctrl+Alt+C: Copy Markup as HTML.</li>
+</ul>
+<!-- ![image](file:F:\GivenchyLee\Blog\picturesForPost\OmniMarkupPreview.png) -->
+<p><img src="/images/OmniMarkupPreview.png" alt="image"></p>
+				</p>
+			</div>
+		
+
+		<!-- 时间 -->
+		<p class="posted-on">
+			2017-04-29
+		</p>
+
+		<!-- 标签链接 -->
+		<div class="tags-links">
+		
+			
+			<a href="/tags/MarkDownPlungins/">
+				MarkDownPlungins
+			</a>
+			
+		
+		</div>
+	</article>
+</div>
+			</div>
+		
+		<!-- 分页 -->
+		 
+	<nav class="other-nav">
+		
+				<a href="/" class="prev">
+					<i class="iconfont icon-left"></i>
+					<span class="meta-arraw meta-arraw-left"></span>Prev
+				</a>
+		
+
+		
+	</nav>
+
+	</main>
+</div>
+		
+		<!-- 注脚 -->
+		<footer class="footer">
+			
+	<div class="social-links">
+		
+			
+				<a href="mailto:your@email.com" class="iconfont icon-email" title = "email"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-stack-overflow" title = "stack-overflow"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-google" title = "google"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-github" title = "github"></a>
+			
+		
+	</div>
+
+<div class="copyright">
+	<span class="power-by">
+		Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+	</span>
+	<span class="theme-info">
+		Theme -
+		<a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Dance</a>
+	</span>
+	<span class="copyright-year">
+		
+		&copy;
+		
+		2017
+		<span class="heart">
+			<i class="iconfont icon-heart"></i>
+		</span>
+		<span class="author">
+			GivenchyLee
+		</span>
+	</span>
+</div>
+		</footer>
+	</div>
+</body>
+</html>

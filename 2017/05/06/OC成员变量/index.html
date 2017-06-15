@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="我的第一个自制博客 分享web中的点点滴滴">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="GivenchyLee">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="OC成员变量"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="我的第一个自制博客 分享web中的点点滴滴" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="lastdance"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>OC成员变量 - lastdance</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<!-- Nav -->
+		<header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="lastdance" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archives
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags">
+                
+                  Tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+<!--     </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div> -->
+</header>
+
+		<!-- Main Content -->
+		<div class="content-area">
+	<div class="post">
+		<div class="container">
+			<article>
+				<!-- 头 -->
+				<div class="post-header">
+					<h1 class="post-title">
+						OC成员变量
+						
+					</h1>
+					<p class="posted-on">
+					2017-05-06
+					</p>
+					<div class="tags-links">
+						
+							
+							<a href="/tags/Object-C/">
+								Object-C
+							</a>
+							
+							<a href="/tags/iOS/">
+								iOS
+							</a>
+							
+						
+					</div>
+				</div>
+				<!-- 摘要 -->
+				<div class="toc">
+					
+				</div>
+				<!-- 内容 -->
+				<div class="post-content">
+					<h1 id="成员变量"><a href="#成员变量" class="headerlink" title="成员变量"></a>成员变量</h1><blockquote>
+<p>概念：写在类声明@interface…{}…@end的大括号中的变量，称之为成员变量。<br>定义与初始化：成员变量不能再定义的同时进行初始化<br>存储与释放：存储在堆(当前对象对应的堆的存储空间中),存储在堆上面的数据，不会被自动释放，只能程序眼手动释放</p>
+</blockquote>
+<p>在这个地方，要区分一下成员变量和属性<br>成员变量是在我们开发中，类似下面这样定义的变量，例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">@interface Person : NSObject</div><div class="line">&#123;</div><div class="line">    @public</div><div class="line">    NSString *_name;</div><div class="line">    CGFloat _age;</div><div class="line">&#125;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
+<p>这里又要解释一下</p>
+<blockquote>
+<p>@private: 作用范围只能在自身类<br>@protended: 作用范围在自身类和继承自己的子类，什么都不写，默认是此属性<br>@public: 作用范围最大，在任何地方<br>@package: 只要在同一个框架中，就能直接访问对线给的成员变量<br>_name , _age便是成员变量</p>
+</blockquote>
+<p>属性就是在开发中，我们用@property关键字声明的变量，如：<br>@property(nonatomic, copy) NSString <em>name;<br>@property(nonatomic, assign) CGFloat </em>age;</p>
+<p>@property关键字做了3件事情</p>
+<ol>
+<li>自动生成了_name 和 _age成员变量</li>
+<li>自动生成相应的getter方法</li>
+<li>自动生成相应的setter方法</li>
+</ol>
+<p>因此两者最直观的区别是属性会有相应的getter方法和setter方法，而成员变量没有，另外，外部访问属性可以用”.”来访问，访问成员变量需要用”-&gt;”来访问。</p>
+<p>而成员变量想要自动生成相应的getter/setter方法，可以用@synthesize修饰解决<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">@implementation Person</div><div class="line">@synthesize age = _age;//或者</div><div class="line">@synthesize age;</div><div class="line">@end</div></pre></td></tr></table></figure></p>
+
+				</div>
+				<!-- 版权 -->
+				<div class="post-copyright">
+					<p class="copyright-item">
+	<span>Author: </span>
+	<span>GivenchyLee</span>
+</p>
+<p class="copyright-item">
+	<span>Origin: </span>
+	<a href="http://yoursite.com">http://yoursite.com</a>
+</p>
+<p class="copyright-item">
+	<span>Link: </span>
+	<a href=":year/:month/:day/:title/">:year/:month/:day/:title/</a>
+</p>
+
+<p class="copyright-item license">
+	本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+</p>
+
+				</div>
+				<!-- 分页 -->
+				<div class="post-footer">
+					<!-- 文章详情的分页部分 -->
+	<nav class="post-nav">
+		
+				<a href="/2018/05/06/apple/" class="prev">
+				<i class="iconfont icon-left"></i>
+				<sapn class="prev-text">apple</sapn>
+				</a>
+		
+		
+				<a href="/2017/05/06/OC私有变量和方法/" class="next">
+				<span class="next-text">iOS知识之Objective-C私有变量和方法</span>
+				<i class="iconfont icon-right"></i>
+				</a>
+			
+	</nav>
+					
+				</div>
+			</article>
+			<div class="comments">
+				<!-- 评论 -->
+				
+	
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		/*
+		var disqus_config = function () {
+		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://givenchylee.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+		
+		<!-- 注脚 -->
+		<footer class="footer">
+			
+	<div class="social-links">
+		
+			
+				<a href="mailto:your@email.com" class="iconfont icon-email" title = "email"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-stack-overflow" title = "stack-overflow"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-google" title = "google"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-github" title = "github"></a>
+			
+		
+	</div>
+
+<div class="copyright">
+	<span class="power-by">
+		Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+	</span>
+	<span class="theme-info">
+		Theme -
+		<a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Dance</a>
+	</span>
+	<span class="copyright-year">
+		
+		&copy;
+		
+		2017
+		<span class="heart">
+			<i class="iconfont icon-heart"></i>
+		</span>
+		<span class="author">
+			GivenchyLee
+		</span>
+	</span>
+</div>
+		</footer>
+	</div>
+</body>
+</html>

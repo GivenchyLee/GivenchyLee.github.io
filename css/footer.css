@@ -1,0 +1,35 @@
+.footer {
+  margin-top: 2em;
+}
+.footer .social-links {
+  text-align: center;
+}
+.footer .social-links a {
+  color: #8a8a8a;
+  text-decoration: none;
+}
+.footer .social-links .iconfont {
+  font-size: 30px;
+}
+.footer .social-links .iconfont + .iconfont {
+  margin-left: 10px;
+}
+.footer .social-links .iconfont:hover {
+  color: #8a8a8a;
+}
+.footer .copyright {
+  margin: 10px 0;
+  color: #8a8a8a;
+  text-align: center;
+  font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+}
+.footer .copyright .hexo-link,
+.footer .copyright .theme-link {
+  color: #8a8a8a;
+}
+.footer .copyright .copyright-year {
+  display: block;
+}
+.footer .copyright .copyright-year .heart {
+  font-size: 14px;
+}

@@ -1,0 +1,83 @@
+.site-header {
+  width: 100%;
+  background: #fefef0;
+  border-bottom: 1px solid #dcdcdc;
+  z-index: 30;
+  position: fixed;
+  top: 0;
+  left: 0;
+  padding-left: 50px;
+  padding-right: 50px;
+  height: 70px;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  box-sizing: border-box;
+}
+.site-header.button_wrap {
+  display: none;
+  float: right;
+  padding-top: 25px;
+}
+.header-inside {
+  height: 100%;
+  width: 100%;
+}
+.logo {
+  display: inline-block;
+  margin-top: 4px;
+  float: left;
+}
+.logo a {
+  display: inline-block;
+}
+.logo a img {
+  display: block;
+  height: 60px;
+}
+.collapse {
+  float: right;
+  height: 65px;
+  display: inline-block;
+}
+.navbar {
+  float: rihgt;
+}
+.navbar ul {
+  height: 38px;
+  list-style-type: none;
+}
+.navbar ul:after {
+  conten: '';
+  display: block;
+  clear: both;
+  height: 0;
+  visibility: hidden;
+}
+.navbar ul li {
+  position: relative;
+  float: left;
+  line-height: 38px;
+  margin-left: 20px;
+}
+.navbar ul li a {
+  text-decoration: none;
+  line-height: 1.5;
+}
+.navbar ul li a:hover {
+  opacity: 1;
+}
+.navbar ul li:before {
+  position: absolute;
+  bottom: 0px;
+  left: 0;
+  content: "";
+  width: 0%;
+  height: 1px;
+  background: #7e7e7e;
+  display: block;
+  -webkit-transition: width 0.25s ease;
+  transition: width 0.25s ease;
+}
+.navbar ul li:hover:before {
+  width: 100%;
+}

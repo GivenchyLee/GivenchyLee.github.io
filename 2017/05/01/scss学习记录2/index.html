@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+
+  <!--Description-->
+  
+  <meta name="description" content="我的第一个自制博客 分享web中的点点滴滴">
+  
+
+  <!--Author-->
+  
+  <meta name="author" content="GivenchyLee">
+  
+
+  <!--Open Graph Title-->
+  
+      <meta property="og:title" content="scss学习记录2"/>
+  
+  <!--Open Graph Description-->
+  
+      <meta property="og:description" content="我的第一个自制博客 分享web中的点点滴滴" />
+  
+  <!--Open Graph Site Name-->
+  <meta property="og:site_name" content="lastdance"/>
+  <!--Type page-->
+  
+      <meta property="og:type" content="article" />
+  
+  <!--Page Cover-->
+  
+
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- Title -->
+  
+  <title>scss学习记录2 - lastdance</title>
+
+
+  <link rel="shortcut icon" href="https://hexo.io/icon/favicon-96x96.png">
+
+  <!-- Custom CSS/Sass -->
+  <link rel="stylesheet" href="/css/style.css">
+</head>
+<body>
+	<div class="container">
+		<!-- Nav -->
+		<header class="site-header">
+  <div class="header-inside">
+    <div class="logo">
+      <a href="/" rel="home">
+        
+        <img src="https://hexo.io/logo.svg" alt="lastdance" height="60">
+        
+      </a>
+    </div>
+    <!-- Navigation -->
+    <nav class="navbar">
+      <!-- Collect the nav links, forms, and other content for toggling -->
+      <div class="collapse">
+        <ul class="navbar-nav">
+          
+          
+            <li>
+              <a href="/.">
+                
+                  Home
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/archives">
+                
+                  Archives
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/tags">
+                
+                  Tags
+                
+              </a>
+            </li>
+          
+            <li>
+              <a href="/about">
+                
+                  About
+                
+              </a>
+            </li>
+          
+        </ul>
+      </div>
+      <!-- /.navbar-collapse -->
+<!--     </nav>
+    <div class="button-wrap">
+      <button class="menu-toggle">Primary Menu</button>
+    </div>
+  </div> -->
+</header>
+
+		<!-- Main Content -->
+		<div class="content-area">
+	<div class="post">
+		<div class="container">
+			<article>
+				<!-- 头 -->
+				<div class="post-header">
+					<h1 class="post-title">
+						scss学习记录2
+						
+					</h1>
+					<p class="posted-on">
+					2017-05-01
+					</p>
+					<div class="tags-links">
+						
+							
+							<a href="/tags/SCss/">
+								SCss
+							</a>
+							
+							<a href="/tags/SassScript/">
+								SassScript
+							</a>
+							
+							<a href="/tags/Variable/">
+								Variable
+							</a>
+							
+							<a href="/tags/Arial/">
+								Arial
+							</a>
+							
+							<a href="/tags/Firefox/">
+								Firefox
+							</a>
+							
+							<a href="/tags/Helvetica/">
+								Helvetica
+							</a>
+							
+						
+					</div>
+				</div>
+				<!-- 摘要 -->
+				<div class="toc">
+					
+				</div>
+				<!-- 内容 -->
+				<div class="post-content">
+					<h1 id="SassScript"><a href="#SassScript" class="headerlink" title="SassScript"></a>SassScript</h1><p>除了普通的CSS语法外，sass支持了一小部分扩展，称之为SassScript。SassScript与允许属性使用变量、计算、还有函数。SassScript可以被用在任何属性的值、当你在写 <strong>mixin</strong> 的时候SassScript还可以被用来生成选择器和属性名字。</p>
+<h2 id="Variable："><a href="#Variable：" class="headerlink" title="Variable：$"></a>Variable：<strong>$</strong></h2><p>SassScript最直接的用法是使用变量。定义一个变量开始于一个美元符号$，写法类似CSS属性：<br><code>$width: 5em;</code> 接下来你可以给属性赋值的时候引用他们<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line">#main &#123;</div><div class="line">    width:$width;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>变量仅仅在定义他们的嵌套选择器里面是可用的，如果他们被定义在了任何一个嵌套选择器的外面，那么他么可以在任何地方使用。<br><em>注意：曾经的变量定义是以！开始的，虽然现在还是可以用的，但是！已经过时了，它会产生警告，所以我们建议使用美元符号$</em><br><em>注意：变量定义的时候也是可以用=的，这样子也是可以工作的，但是会产生警告，所以我们还是建议使用：来替代=</em><br><a id="more"></a></p>
+<h2 id="数据类型"><a href="#数据类型" class="headerlink" title="数据类型"></a>数据类型</h2><p>SassScript支持六种主要的数据类型</p>
+<ul>
+<li>数字 (例如 1.2、1.3、10px)</li>
+<li>文本字符串，无论是否有引号 (例如 “foo”、’baz’、baz)</li>
+<li>颜色 (例如 blue、#ff00ff、rgb(255,0,0,0.5))</li>
+<li>布尔值 (例如 true、false)</li>
+<li>空值 (例如 null)</li>
+<li>值列表，用空格或者逗号分隔开的(例如 1.5em 1em 0 2em、Helvetica, Arial, sans-serif)</li>
+</ul>
+<h3 id="字符串"><a href="#字符串" class="headerlink" title="字符串"></a>字符串</h3><p>CSS提供了两种类型的字符串：带引号的字符串和不带引号的字符串。SassScript可以识别这两种字符串，并且，如果一种类型的字符串被用在了Sass文件中，那么这种字符串将会被用于编译结果的CSS文件中。<br>有一个例外，当使用<code>#{}</code>,引号的字符串会被解释成不带引号的字符串，这个性质使得在mixins的选择器名字的时候很方便。列如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div></pre></td><td class="code"><pre><div class="line">@mixin firefox-message($selector)&#123;</div><div class="line">    body.firefox #&#123;$selector&#125;:before&#123;</div><div class="line">        content:&quot;Hi, Firefox users!&quot;;</div><div class="line">    &#125;</div><div class="line">&#125;</div><div class="line">@include firefox-message(&quot;.header&quot;)</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">body</span><span class="selector-class">.firefox</span> <span class="selector-class">.header</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">content</span>:<span class="string">"Hi,Firefox users!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Lists"><a href="#Lists" class="headerlink" title="Lists"></a>Lists</h2><p>Lists are how Sass represents the values of CSS declarations like margin: 10px 15px 0 0 or font-face: Helvetica, Arial, sans-serif. Lists are just a series of other values, separated by either spaces or commas. In fact, individual values count as lists, too(实际上单个的值也是被计算成list的): they’re just lists with one item.</p>
+<p>On their own, lists don’t do much,(独立的讲，list的用处不是很多) but the Sass list functions make them useful. The {Sass::Script::Functions#nth nth function} can access items in a list, the {Sass::Script::Functions#join join function} can join multiple lists together, and the {Sass::Script::Functions#append append function} can add items to lists. The @each rule can also add styles for each item in a list.</p>
+<p>In addition to containing simple values, lists can contain other lists.(list除了包含简单的item外还可以包含其它list) For example, 1px 2px, 5px 6px is a two-item list containing the list 1px 2px and the list 5px 6px. If the inner lists have the same separator as the outer list, you’ll need to use parentheses to make it clear where the inner lists start and stop. For example, (1px 2px) (5px 6px) is also a two-item list containing the list 1px 2px and the list 5px 6px. The difference is that the outer list is space-separated, where before it was comma-separated.</p>
+<p>When lists are turned into plain CSS, Sass doesn’t add any parentheses, since CSS doesn’t understand them. That means that (1px 2px) (5px 6px) and 1px 2px 5px 6px will look the same when they become CSS. However, they aren’t the same when they’re Sass: the first is a list containing two lists, while the second is a list containing four numbers.</p>
+<p>Lists can also have no items in them at all. These lists are represented as (). They can’t be output directly to CSS; if you try to do e.g. font-family: (), Sass will raise an error. If a list contains empty lists or null values, as in 1px 2px () 3px or 1px 2px null 3px, the empty lists and null values will be removed before the containing list is turned into CSS.</p>
+<p>##运算<br>所有数据类型都支持等式运算 (== and !=)另外，每种数据类型也有其支持的特殊运算符</p>
+<h3 id="数字运算符"><a href="#数字运算符" class="headerlink" title="数字运算符"></a>数字运算符</h3><p>SassScript支持数字之间的标准运算（加减乘除取模），并且，如果需要的话，也可以在不同单位之间做转换(即两个不同单位的数字运算后结果为第一个操作数的单位)。数字也支持关系运算符(&lt; &gt; &lt;= &gt;=)</p>
+<h3 id="除法运算符-和"><a href="#除法运算符-和" class="headerlink" title="除法运算符 和 /"></a>除法运算符 和 <code>/</code></h3><p>CSS允许<code>/</code> 出现在属性值里面，作为分割数字的一种方式。既然SassScript是CSS属性语法的扩展，他就必须支持这种语法，同时也允许<code>/</code>用在除法运算上。默认情况下，在SassScript里面用<code>/</code>分割的两个数字会在CSS中原封不动的输出。<br>然而在一下三种情况下，<code>/</code>会被解释为除法运算。</p>
+<ul>
+<li>如果数值或者它的任何部分是存储在一个变量中或者是函数的返回值</li>
+<li>如果数值被圆括号包围</li>
+<li>如果数值是另外一个数学表达式的一部分<figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div><div class="line">8</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    font: 10px/8px; //纯CSS，不是除法运算</div><div class="line">    $width: 1000px;</div><div class="line">    width: $width/2; /* 使用了变量，是除法运算</div><div class="line">    width: round(1.5)/2  //使用了函数，是除法运算</div><div class="line">    height: (500px/2)    /*使用了圆括号，是除法运算</div><div class="line">    margin-left: 5px + 8px/2px;  //使用了+号，是除法运算</div><div class="line">&#125;</div></pre></td></tr></table></figure>
+</li>
+</ul>
+<h3 id="颜色运算"><a href="#颜色运算" class="headerlink" title="颜色运算"></a>颜色运算</h3><p>所有算术运算都支持颜色值，并且是分段运算的，也就是说red/green/blue个颜色分量会单独进行运算。<br>那些有alpha通道的颜色，必须要有同样的alpha值，才能执行颜色运算。颜色运算不会改变alpha<br>一个颜色的alpha通道可以通过{Sass::Script::Functions#opacify opacify} 和 {Sass::Script::Functions#transparentize transparentize} 函数进行调整。例如：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$translucent-red:rgba(255,0,0,0.5);</div><div class="line">p &#123;</div><div class="line">    color:opacify($translucnet-red,0.3);</div><div class="line">    background-color: transparentize($translucent-red,0.25);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">color</span>:<span class="built_in">rgba</span>(255,0,0,0.3);</div><div class="line">    <span class="attribute">background-color</span>:<span class="built_in">rgba</span>(255,0,0,0.25);</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h3 id="字符串运算符"><a href="#字符串运算符" class="headerlink" title="字符串运算符"></a>字符串运算符</h3><p><code>+</code>运算符可以用来连接字符串<br>如果有引号的字符串被添加了一个没有引号的字符串 （也就是，带引号的字符串在 + 符号左侧）， 结果会是一个有引号的字符串。同样的，如果一个没有引号的字符串被添加了一个有引号的字符串 （没有引号的字符串在 + 符号左侧）， 结果将是一个没有引号的字符串</p>
+<p><strong>默认情况下，如果两个值彼此相邻，它们会被用空格连接起来</strong><br>空值会被是做空字符串：<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line">$value: null;</div><div class="line">p:before &#123;</div><div class="line">    content: &quot;I ate #&#123;$value&#125; pies!&quot;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-pseudo">:before</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"I ate  pies!"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="Interpolation"><a href="#Interpolation" class="headerlink" title="Interpolation: #{}"></a>Interpolation: #{}</h2><p>你可以使用#{}语法在选择器和属性的时候使用SassScript变量<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$name: foo;</div><div class="line">$attr: border;</div><div class="line">p.#&#123;$name&#125; &#123;</div><div class="line">    #&#123;$attr&#125;-color:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span><span class="selector-class">.foo</span> &#123;</div><div class="line">    <span class="attribute">border-color</span>:blue;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>在#{}语法附近的任何操作符将会被视作简单的CSS<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">p &#123;</div><div class="line">    $font-size: 12px;</div><div class="line">    $line-height: 30px;</div><div class="line">    font: #&#123;$font-size&#125;/#&#123;$line-height&#125;;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-tag">p</span> &#123;</div><div class="line">    <span class="attribute">font</span>:<span class="number">12px</span>/<span class="number">30px</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<h2 id="默认值：-default"><a href="#默认值：-default" class="headerlink" title="默认值：!default"></a>默认值：!default</h2><p>你可以在变量尚未赋值前，通过在值的末尾添加<code>!default</code>标记来为其指定。也就是说，如果一个变量已经被复制了，就不会在此赋值，如果还没有被赋值，就会指定一个值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div><div class="line">6</div><div class="line">7</div></pre></td><td class="code"><pre><div class="line">$content: &quot;First content&quot;;</div><div class="line">$content: &quot;Second content?&quot; !default;</div><div class="line">$new_content: &quot;First time reference&quot; !default;</div><div class="line">#main &#123;</div><div class="line">    content: $content;</div><div class="line">    new-content: $new_content;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"Fisrt content"</span>;</div><div class="line">    <span class="attribute">new-content</span>: <span class="string">"First time reference"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>变量的值如果是null的话，会被<code>!default</code>当做是没有值<br><figure class="highlight plain"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div><div class="line">4</div><div class="line">5</div></pre></td><td class="code"><pre><div class="line">$content: null;</div><div class="line">$content: &quot;Non-null content&quot; !default;</div><div class="line">#main &#123;</div><div class="line">    content:$content;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+<p>被编译成：<br><figure class="highlight css"><table><tr><td class="gutter"><pre><div class="line">1</div><div class="line">2</div><div class="line">3</div></pre></td><td class="code"><pre><div class="line"><span class="selector-id">#main</span> &#123;</div><div class="line">    <span class="attribute">content</span>: <span class="string">"Non-null content"</span>;</div><div class="line">&#125;</div></pre></td></tr></table></figure></p>
+
+				</div>
+				<!-- 版权 -->
+				<div class="post-copyright">
+					<p class="copyright-item">
+	<span>Author: </span>
+	<span>GivenchyLee</span>
+</p>
+<p class="copyright-item">
+	<span>Origin: </span>
+	<a href="http://yoursite.com">http://yoursite.com</a>
+</p>
+<p class="copyright-item">
+	<span>Link: </span>
+	<a href=":year/:month/:day/:title/">:year/:month/:day/:title/</a>
+</p>
+
+<p class="copyright-item license">
+	本文采用<a rel="license" href="http://creativecommons.org/licenses/by-nc/4.0/" target="_blank">知识共享署名-非商业性使用 4.0 国际许可协议</a>进行许可
+</p>
+
+				</div>
+				<!-- 分页 -->
+				<div class="post-footer">
+					<!-- 文章详情的分页部分 -->
+	<nav class="post-nav">
+		
+				<a href="/2017/05/01/scss学习记录3/" class="prev">
+				<i class="iconfont icon-left"></i>
+				<sapn class="prev-text">scss学习记录3</sapn>
+				</a>
+		
+		
+				<a href="/2017/05/01/scss学习记录1/" class="next">
+				<span class="next-text">Scss学习记录1</span>
+				<i class="iconfont icon-right"></i>
+				</a>
+			
+	</nav>
+					
+				</div>
+			</article>
+			<div class="comments">
+				<!-- 评论 -->
+				
+	
+		<div id="disqus_thread"></div>
+		<script>
+
+		/**
+		*  RECOMMENDED CONFIGURATION VARIABLES: EDIT AND UNCOMMENT THE SECTION BELOW TO INSERT DYNAMIC VALUES FROM YOUR PLATFORM OR CMS.
+		*  LEARN WHY DEFINING THESE VARIABLES IS IMPORTANT: https://disqus.com/admin/universalcode/#configuration-variables*/
+		/*
+		var disqus_config = function () {
+		this.page.url = PAGE_URL;  // Replace PAGE_URL with your page's canonical URL variable
+		this.page.identifier = PAGE_IDENTIFIER; // Replace PAGE_IDENTIFIER with your page's unique identifier variable
+		};
+		*/
+		(function() { // DON'T EDIT BELOW THIS LINE
+		var d = document, s = d.createElement('script');
+		s.src = 'https://givenchylee.disqus.com/embed.js';
+		s.setAttribute('data-timestamp', +new Date());
+		(d.head || d.body).appendChild(s);
+		})();
+		</script>
+		<noscript>Please enable JavaScript to view the <a href="https://disqus.com/?ref_noscript">comments powered by Disqus.</a></noscript>
+
+	
+				
+			</div>
+		</div>
+	</div>
+</div>
+		
+		<!-- 注脚 -->
+		<footer class="footer">
+			
+	<div class="social-links">
+		
+			
+				<a href="mailto:your@email.com" class="iconfont icon-email" title = "email"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-stack-overflow" title = "stack-overflow"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-google" title = "google"></a>
+			
+		
+			
+				<a href="/" class="iconfont icon-github" title = "github"></a>
+			
+		
+	</div>
+
+<div class="copyright">
+	<span class="power-by">
+		Powered by <a class="hexo-link" href="https://hexo.io/">Hexo</a>
+	</span>
+	<span class="theme-info">
+		Theme -
+		<a class="theme-link" href="https://github.com/ahonn/hexo-theme-even">Dance</a>
+	</span>
+	<span class="copyright-year">
+		
+		&copy;
+		
+		2017
+		<span class="heart">
+			<i class="iconfont icon-heart"></i>
+		</span>
+		<span class="author">
+			GivenchyLee
+		</span>
+	</span>
+</div>
+		</footer>
+	</div>
+</body>
+</html>

@@ -1,0 +1,91 @@
+.home .content-area {
+  padding-bottom: 140px;
+}
+.post {
+  padding-top: 70px;
+  padding-bottom: 70px;
+}
+.post article {
+  padding-bottom: 32px;
+}
+.post .post-copyright {
+  padding-top: 30px;
+  padding-bottom: 30px;
+}
+.container {
+  margin: 0 auto;
+  padding: 0 0 5em;
+}
+.post-title {
+  letter-sapceing: 0.2em;
+  color: #000;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.25em;
+}
+.post-title a {
+  color: #000;
+  font-weight: 700;
+  text-decoration: none;
+}
+.post-title a:hover {
+  color: #ffa500;
+}
+.post-title:after {
+  content: "";
+  height: 2px;
+  width: 100px;
+  background: #000;
+  display: block;
+  margin: 10px auto 0;
+}
+.home .post-content {
+  margin: 1.5em 0;
+}
+.home .post-content p {
+  text-align: center;
+}
+.posted-on {
+  text-align: center;
+  font-size: 0.688em;
+  text-transform: uppercase;
+  letter-sapceing: 0.2em;
+}
+.tags-links {
+  text-align: center;
+  font-size: 0.8em;
+  font-style: normal;
+  margin-bottom: 30px;
+}
+.tags-links a {
+  margin: 0.5px;
+  font-style: italic;
+  text-decoration: none;
+}
+.post-nav {
+  margin: 1em 0;
+  height: 27px;
+}
+.post-nav .prev,
+.post-nav .next {
+  font-weight: 600;
+  text-decoration: none;
+  font-size: 20px;
+  color: #8a8a8a;
+  font-family: Athelas, STHeiti, Microsoft Yahei, serif;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.3s;
+}
+.post-nav .prev {
+  float: left;
+}
+.post-nav .prev:hover {
+  transform: translateX(-4px);
+}
+.post-nav .next {
+  float: right;
+}
+.post-nav .next:hover {
+  transform: translateX(4px);
+}

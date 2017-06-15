@@ -1,0 +1,27 @@
+.archive {
+  padding-bottom: 60px;
+}
+.archive h2.year {
+  color: #444;
+}
+.archive ul.list {
+  padding-left: 50px;
+}
+.archive ul.list li {
+  list-style-type: none;
+  padding: 10px 0;
+  line-height: 1.5;
+  transition-property: transform;
+  transition-timing-function: ease-out;
+  transition-duration: 0.3s;
+}
+.archive ul.list li a {
+  text-decoration: none;
+}
+.archive ul.list li:hover {
+  transform: translate(10px);
+}
+.archive .date {
+  margin-right: 30px;
+  color: #7f8c8d;
+}
